@@ -1,0 +1,273 @@
+Q 1 )what is git 
+Ans :- git is a version control system
+Advantages : -> easy file recovery
+-> who introduced issue and when
+-> roll back to previous working state
+
+Q2) History of version control system
+
+local version system
+
+In first local version control system is generate . it store the file on loccal server with the help of local database. this vcs has its own pros and cons
+pros-> it maintain the version system with date wise
+cons-> All the data is stored on the local sytem, if the sustem crashed then all the data will lose 
+
+Centaralized version system
+
+In centralized version system all the machines are connected with on server. all the programmer pull the data from the server and then finally push it on the server. if the the server crashed then the data will lose. but the data will remain on local machines
+
+Distributed version system
+
+It isalmost centralized version system, but in it all the programmer can take the full backup of the project on their own end, i.e All the repository is mirrored at the end of all programmer
+
+------------------------------------------------------
+
+-> Install Git
+After installation we will get
+
+1)Git command line tool
+2) git bash (i.e. teriminal)
+
+tocheck git installation
+
+open git bash and write git and enter
+then we will get about git
+
+commands:-
+
+-> $ pwd is used to check in which folder we are
+
+-> $ git --global user.name "Vikas"
+
+-> $ git --global user.email "Vikasbatari@gmail.com"
+
+-> $ git config --list	 
+
+
+Check user name and email	
+
+- > $ git config user.name
+->  $ git config user.email
+
+
+Git Three Stage Architecture
+
+1) Working directory
+-> its the directory where our project is layed and we work on it
+
+2) Staging Area 
+-> Before pushing the particular files to git directory, we stage the files in staging area 
+
+3)git directory
+-> After staging the files are finally pushed to git directory where the snap shot of the files are saved
+
+
+-> To check git status
+
+    $ git status
+
+-> create git repository
+
+    $ git init
+
+How to add all files in staging area
+
+   $  git add --a
+
+how to commit data 
+
+$ git commit -m "intial commit"   (by typing -m we can write commit)
+
+how to check all commits
+
+$ git log 
+
+How to add and commit particular file 
+ 
+$  git add file name
+$ git commit file name -m "comments here"
+
+how to delete git repository
+
+$ rm -rf .git
+
+How to pull github repository
+
+-> copy the url from git humb then use the following coommand in git bash
+
+$ git clone https://github.com/tensorflow/tensorflow.git
+
+List content in directory
+
+$ ls
+
+To go in directory
+
+$ cd
+
+file status lifecycle
+
+untracked -> unmodified -> modified -> staged -> commit after commit files comes in unmodified state
+
+How to ignore file to add in git repository
+
+-> create .gitignore file
+
+$ touch .gitignore
+after creation of .gitignore file add the name of file which we want to ignore
+
+git diff command is used to get diffrence between working area and staging area
+
+$ git diff
+
+git diff --staged command is used to get diffrence between staging area and commit
+
+$ git diff --staged
+
+Direct commit : it will commit all the tracked file directly with out staging
+
+$ git commit -a -m "Direct Commit"
+
+# Remove git repository
+
+$ rm -rf .git
+
+Remove file from git file
+$ rm 'filename'
+
+Rename file name from git command
+
+$  git mv filenametorename newfilename
+
+How to untrack file in git
+
+$ git rm --cached filename
+
+how to check commits with dff
+
+$ git log -p
+$  git log -- stat  (show short summary)
+
+Show all commits in oneline and in short
+$  git log --pretty=oneline
+$  git log --pretty=short
+$  git log --pretty=full
+
+Show Data in duration wise
+
+$  git log --since=2.days
+$  git log --since=2.weeks
+$  git log --since=2.months
+$  git log --since=2.years
+
+unstage file
+
+$  git restore --staged filename
+
+Restore file data from last commit
+
+$  git checkout -- filename
+
+To restore working directory from last commit
+
+$  git checkout -f
+
+
+Working with Remote Repository steps
+
+-> create Account on github
+-> after login in top right side click on +
+-> new repository
+-> create repository
+-> go to working area
+-> open git bash
+-> Push data to remote
+
+$ git remote add origin https://github.com/vikasbatari/Gittutorialdemo.git
+
+$ git push -u origin master
+
+now the data will pushed on the remote. if asked for authentication then generate the ssh key, steps are below
+
+
+How to generate SSH key for github
+
+Open Git Bash.
+
+Paste the text below, substituting in your GitHub email address.
+
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+
+# start the ssh-agent in the background
+$ eval "$(ssh-agent -s)"
+
+$ ssh-add ~/.ssh/id_ed25519
+
+# copy SSh Key
+
+$ tail ~/.ssh/id_rsa.pub
+
+After that SSh key will be generated. copy the key and and paste it in the github new key generation proces
+
+
+Branching in git hub
+
+# Create new branch
+
+$ git checkout -b develop   (develop is the name of brach )
+
+# switch between branches
+
+$ git checkout master (master is the name of branch in which we want to switch)
+
+# Get all branches 
+
+$ git branch
+
+How to merge data from branches to master branch
+
+$ git merge secondary  (sceondary here is the name of branch which we want to merge in master branch)
+
+
+# check last commit of all braches
+
+$ git branch -v
+
+# check already merged branches
+
+$ git branch --merged
+
+# check not merged branches
+
+$ git branch --no-merged
+
+# Delete branch
+
+$ git branch -d branchname  (will delete only merged branches)
+
+# Delete unmerged branches
+
+$ git branch -D branchname 
+
+
+# Push Data to remote server 
+
+$ git push -u origin  (here origin is the name of the remote repository)
+
+# Push Data to remote server branch wise
+
+$ git push origin master  (here origin is the name of remote repository and master is the name of branch. when we push the data of particular branch we should inside that branch)
+
+# Delete branches on remote server
+
+$ git push -d origin master  (here origin is the name of remote repository and master is the name of branch. )
+
+
+
+
+
+
+
+
+
+ 
